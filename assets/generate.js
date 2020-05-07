@@ -1,36 +1,50 @@
-var totalVarLen = 0
-var totalVar = []
+var totalLocation = []
+var totalJob = []
 
-for (i=0; i<4; i++) {
-    totalVarLen += locations[i].length
-    for (j=0; j<locations[i].length; j++) {
-        totalVar = totalVar.concat(locations[i][j])
-    }
+for (i=0; i<jobs.length; i++) {
+  for (j=0; j<locations[i].length; j++) {
+    totalLocation = totalLocation.concat(locations[i][j])
+  }
 }
 
-function generate (isExmapled, targetID) {
-    var varName = ''
-    if (isExmapled) {
-        varName = exampleName[Math.floor(Math.random() * exampleName.length)]
-    } else {
-        varName = document.getElementById('name').value
+for (i=0; i<jobs.length; i++) {
+  totalJob = totalJob.concat(jobs[i])
+}
+
+function generate (varName, varLocation, targetID) {
+  var randomDetailLocation = totalLocation[Math.floor(Math.random() * totalLocation.length)]
+  var randomDetailJob = totalJob[Math.floor(Math.random() * totalJob.length)]
+  var result = ''
+
+  if (specificLocations[randomDetailLocation]) {
+    result = generateSpecificCase(2, [varLocation, randomDetailLocation, specificLocations[randomDetailLocation], varName])
+  } else {
+    if (jobs[0].indexOf(randomDetailJob) >= 0) {
+      result = generateSpecificCase(1, [varLocation, randomDetailLocation, randomDetailJob, varName])
+    } else if (jobs[1].indexOf(randomDetailJob) >= 0) {
+      result = generateSpecificCase(2, [varLocation, randomDetailLocation, randomDetailJob, varName])
     }
-    var varLocation = document.getElementById('location').value
-    var location = totalVar[Math.floor(Math.random() * totalVar.length)]
-    var result = ''
-    if (locations[0].indexOf(location) >= 0) {
-        result = '미구현'
-    } else if (locations[1].indexOf(location) >= 0) {
-        var randomObject = objects[Math.floor(Math.random() * objects.length)]
-        result = varLocation + location + randomObject + '도둑' + varName
-    } else if (locations[2].indexOf(location) >= 0) {
-        result = varLocation + location + '절대강자' + varName
-    } else /*if (locations[3].indexOf(location) >= 0)*/ {
-        result = varLocation + location + '스피드레이서' + varName
-    }
-    document.getElementById(targetID).innerHTML = result
+  }
+  document.getElementById(targetID).innerHTML = result
+  // debug: console.log(randomDetailLocation, randomDetailJob, result)
+}
+
+/* params = [varLocation, randomDetailLocation, randomDetailJob, varName] */
+function generateSpecificCase (caseCode, params) {
+  if (caseCode === 1) {
+    var randomObject = objects[Math.floor(Math.random() * objects.length)]
+    return params[0] + params[1] + randomObject + params[2] + params[3]
+  } else if (caseCode === 2) {
+    return params[0] + params[1] + params[2] + params[3]
+  } else {
+    return undefined
+  }
 }
 
 setInterval(function () {
-    generate(true, 'example')
+  var exampleName = exampleNames[Math.floor(Math.random() * exampleNames.length)]
+  var exampleLocation = exampleLocations[Math.floor(Math.random() * exampleLocations.length)]
+  generate(exampleName, exampleLocation, 'example-result')
+  document.getElementById('example-location').innerHTML = exampleLocation
+  document.getElementById('example-name').innerHTML = exampleName
 }, 5000)

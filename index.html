@@ -4,64 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>악질이름 생성기</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
-<body>
-    <style>
-        @font-face { font-family: 'SDKukdetopokki-Lt'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/SDKukdetopokki-aLt00.woff') format('woff'); font-weight: normal; font-style: normal; }
-        body {
-            background-color: #fff;
-        }
-        .body {
-            margin: auto;
-            max-width: 500px;
-        }
-        form, .unit {
-            position: relative;
-            align-items: center;
-            background-color: #e2e2e2;
-            padding: 10px;
-            border-radius: 5px;
-            border: 0px solid;
-            width: 100%;
-            max-width: 500px;
-            text-align: center;
-        }
-        .button {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 5px;
-            background-color: #999;
-            color: white;
-            border-radius: 3px;
-            cursor: pointer;
-        }
-        input {
-            width: 100px;
-            height: 30px;
-            padding: 0px 5px;
-            outline: none;
-            border: 1px solid;
-            border-radius: 3px;
-        }
-        h1, h2 {
-            font-family: 'SDKukdetopokki-Lt', sans-serif;
-        }
-    </style>
-    <div class="body">
-        <form action="">
+<body class="preload">
+    <div class="container">
+        <div class="hero">
             <h1>악질이름 생성기</h1>
-            <div>
-                <input type="text" name="location" id="location" placeholder="지역">
-                <input type="text" name="name" id="name" placeholder="이름">    
-            </div>
-            <div class="button" onclick="generate(false, 'result')">생성</div>
-            <p id="result">결과?</p>
-        </form>
-        <div class="unit">
-            <h2>예시</h2>
-            <p id="example">동탄사우나수건도둑엄준식</p>
-        </div> 
+            <p>랜덤으로 악질 이름을 생성합니다.</p>
+        </div>
+        <div class="form">
+            <form action="">
+                <input class="form-component input light-dark" type="text" name="location" id="location" placeholder="거주지">
+                <input class="form-component input light-dark" type="text" name="name" id="name" placeholder="이름">
+                <div class="form-component button" onclick="generate(document.getElementById('name').value, document.getElementById('location').value, 'result')">생성!</div>
+            </form>
+        </div>
     </div>
+    <div class="container">
+        <div class="wrapper">
+            <p class="result" id="result">어떤 이름이 나올까?</p>
+        </div>
+        <div class="example">
+            <div class="input-example light-dark" id="example-location">동탄</div>
+            <div class="input-example light-dark" id="example-name">엄준식</div>
+             → 
+            <div class="input-example light-dark" id="example-result">동탄사우나수건도둑엄준식</div>
+        </div>
+    </div>
+    <script>
+        window.onload = function () {document.getElementsByTagName('body')[0].classList.remove('preload')}
+    </script>
     <script src="./assets/content.js"></script>
     <script src="./assets/generate.js"></script>
 </body>
