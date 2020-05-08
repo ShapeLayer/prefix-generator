@@ -9,7 +9,7 @@ function generate (varName, varLocation, targetID) {
   var randomDetailJob = totalJob[Math.floor(Math.random() * totalJob.length)]
   var result = ''
 
-  if (specificLocations[randomDetailLocation]) {
+  if (specificLocations[randomDetailLocation] !== undefined) {
     result = generateSpecificCase(2, [varLocation, randomDetailLocation, specificLocations[randomDetailLocation], varName])
   } else {
     if (jobs[0].indexOf(randomDetailJob) >= 0) {
