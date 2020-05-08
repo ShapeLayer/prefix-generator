@@ -14,23 +14,26 @@
         </div>
         <div class="form">
             <form action="">
-                <input class="form-component input light-dark" type="text" name="location" id="location" placeholder="거주지">
-                <input class="form-component input light-dark" type="text" name="name" id="name" placeholder="이름">
-                <div class="form-component button" onclick="generate(document.getElementById('name').value, document.getElementById('location').value, 'result')">생성!</div>
+                <div class="wrapper"><div class="form-8bit"><div class="form-8bit-wrapper"><input class="form-component input light-dark" type="text" name="location" id="location" placeholder="거주지"></div></div></div>
+                <div class="wrapper"><div class="form-8bit"><div class="form-8bit-wrapper"><input class="form-component input light-dark" type="text" name="name" id="name" placeholder="이름"></div></div></div>
+                <div class="wrapper"><div class="form-8bit"><div class="form-8bit-wrapper"><div class="form-component button" onclick="generate(document.getElementById('name').value, document.getElementById('location').value, 'result')">생성!</div></div></div></div>
             </form>
         </div>
     </div>
     <div class="container">
         <div class="wrapper">
-            <p class="result" id="result">어떤 이름이 나올까?</p>
+            <p class="result" id="result">생성 버튼을 누르면 여기에 결과가 표시됩니다.</p>
         </div>
+        <hr>
         <div class="example">
+            <p>어떤 이름이 나올까?</p>
             <div class="input-example light-dark" id="example-location">동탄</div>
             <div class="input-example light-dark" id="example-name">엄준식</div>
              → 
             <div class="input-example light-dark" id="example-result">동탄사우나수건도둑엄준식</div>
         </div>
     </div>
+    <div class="github-wrapper"><div class="form-8bit"><div class="form-8bit-wrapper"><div class="github"><a href="https://github.com/kpjhg0124/prefix-gernerator" target="_blank">View Code on Github</a></div></div></div></div>
     <script>
         window.onload = function () {document.getElementsByTagName('body')[0].classList.remove('preload')}
     </script>
