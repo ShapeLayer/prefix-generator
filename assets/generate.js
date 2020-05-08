@@ -1,18 +1,11 @@
-var totalLocation = []
 var totalJob = []
-
-for (i=0; i<jobs.length; i++) {
-  for (j=0; j<locations[i].length; j++) {
-    totalLocation = totalLocation.concat(locations[i][j])
-  }
-}
 
 for (i=0; i<jobs.length; i++) {
   totalJob = totalJob.concat(jobs[i])
 }
 
 function generate (varName, varLocation, targetID) {
-  var randomDetailLocation = totalLocation[Math.floor(Math.random() * totalLocation.length)]
+  var randomDetailLocation = locations[Math.floor(Math.random() * locations.length)]
   var randomDetailJob = totalJob[Math.floor(Math.random() * totalJob.length)]
   var result = ''
 
