@@ -1,6 +1,6 @@
 prefix-generator
 ---
-[![](https://img.shields.io/badge/license-MIT-green)]() [![](https://img.shields.io/badge/lunch-mother--prepared-lightgrey)](#)
+[![](https://img.shields.io/badge/license-MIT-green)]() [![](https://img.shields.io/badge/lunch-prepared--by--mother-lightgrey)](#)
 
 ![](./.github/demo.png)
 
