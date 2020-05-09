@@ -9,6 +9,16 @@ body {
     color: #fff;
     font-family: 'NeoDunggeunmo', sans-serif;
 }
+body.detail {
+    margin-top: 60px;
+}
+a {
+    color: #fff;
+}
+img {
+    width: 100%;
+    max-width: 400px;
+}
 input[type=text], input[type=text]::placeholder {
     font-family: 'NeoDunggeunmo', sans-serif;
 }
@@ -121,6 +131,20 @@ hr {
 .github {    
     padding: 5px;
 }
-.github a {
-    color: #fff;
+.detail .container {
+    margin: auto;
+    margin-bottom: 60px;
+    max-width: 1000px;
+}
+#supersecret-document {
+    display: none;
+    margin: 0;
+}
+#supersecret-input {
+    width: 15px;
+}
+.badge {
+    width: 162px;
+    height: 100%;
+    vertical-align: middle;
 }

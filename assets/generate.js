@@ -10,7 +10,11 @@ function generate (varName, varLocation, targetID) {
   var result = ''
 
   if (specificLocations[randomDetailLocation] !== undefined) {
-    result = generateSpecificCase(2, [varLocation, randomDetailLocation, specificLocations[randomDetailLocation], varName])
+    if (specificLocations[randomDetailLocation][1]) {
+      result = generateSpecificCase(2, [varLocation, randomDetailLocation, specificLocations[randomDetailLocation][0], varName])
+    } else {
+      result = generateSpecificCase(3, [varLocation, randomDetailLocation, specificLocations[randomDetailLocation][0], varName])
+    }
   } else {
     if (jobs[0].indexOf(randomDetailJob) >= 0) {
       result = generateSpecificCase(1, [varLocation, randomDetailLocation, randomDetailJob, varName])
@@ -29,6 +33,16 @@ function generateSpecificCase (caseCode, params) {
     return params[0] + params[1] + randomObject + params[2] + params[3]
   } else if (caseCode === 2) {
     return params[0] + params[1] + params[2] + params[3]
+  } else if (caseCode === 3) {
+    if (params[0] === '' || Math.floor(Math.random() * 2) === 0) {
+      return params[1] + params[2] + params[3]
+    } else {
+      if (Math.floor(Math.random() * 2) === 0) {
+        return params[1] + params[2] + params[0] + '의아들' + params[3]
+      } else {
+        return params[1] + params[2] + params[0] + '의딸' + params[3]
+      }
+    }
   } else {
     return undefined
   }
