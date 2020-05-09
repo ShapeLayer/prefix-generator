@@ -7,7 +7,7 @@ for (i=0; i<jobs.length; i++) {
 function generate (varName, varLocation, targetID) {
   var result = ''
 
-  if (Math.random() < 0.75) { /* 일반 장소 처리 */
+  if (Math.random() < 0.8) { /* 일반 장소 처리 */
     var randomDetailLocation = locations[0][Math.floor(Math.random() * locations[0].length)]
     var randomDetailJob = totalJob[Math.floor(Math.random() * totalJob.length)]
     if (jobs[0].indexOf(randomDetailJob) >= 0) {
@@ -49,11 +49,3 @@ function generateSpecificCase (caseCode, params) {
     return undefined
   }
 }
-
-setInterval(function () {
-  var exampleName = exampleNames[Math.floor(Math.random() * exampleNames.length)]
-  var exampleLocation = exampleLocations[Math.floor(Math.random() * exampleLocations.length)]
-  generate(exampleName, exampleLocation, 'example-result')
-  document.getElementById('example-location').innerHTML = exampleLocation
-  document.getElementById('example-name').innerHTML = exampleName
-}, 5000)

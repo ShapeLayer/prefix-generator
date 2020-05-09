@@ -46,11 +46,17 @@
         </div>
     </div>
     <div class="github-wrapper"><div class="form-8bit"><div class="form-8bit-wrapper"><div class="github"><a href="./detail.html" target="_blank">대체 여긴 뭐하는 사이트인가요?</a></div></div></div></div>
-    <script>
-        window.onload = function () {document.getElementsByTagName('body')[0].classList.remove('preload')}
-    </script>
     <script src="./assets/common.js"></script>
     <script src="./assets/contents.js"></script>
     <script src="./assets/generate.js"></script>
+    <script>
+        setInterval(function () {
+          var exampleName = exampleNames[Math.floor(Math.random() * exampleNames.length)]
+          var exampleLocation = exampleLocations[Math.floor(Math.random() * exampleLocations.length)]
+          generate(exampleName, exampleLocation, 'example-result')
+          document.getElementById('example-location').innerHTML = exampleLocation
+          document.getElementById('example-name').innerHTML = exampleName
+        }, 5000)
+    </script>
 </body>
 </html>

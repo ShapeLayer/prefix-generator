@@ -31,6 +31,14 @@
         <p>최근 유행하고 있는 악질 이름 드립을 효율적으로 생성할 수 있게 만든 악질 이름 생성기입니다.</p>
     </div>
     <div class="container">
+        <h2>혹시 광고 달 계획 있나요?</h2>
+        <p>모든 예술가가 다 그렇듯이, 저는 제 소중한 작품을 망칠 생각이 없습니다.</p>
+    </div>
+    <div class="container">
+        <h2>혹시 펩시 싫어하세요?</h2>
+        <p>아뇨 전 오히려 펩시를 더 좋아합니다.</p>
+    </div>
+    <div class="container">
         <h2>버그 신고 / 수정 제안</h2>
         <p>버그가 발생했거나 사회적으로 중대한 논란이 발생할 수 있는 수식어가 있다면 아래 개발자 연락처로 알려주세요.</p>
         <p> * 좋은 악질 이름 제보도 받습니다.</p>
@@ -50,14 +58,27 @@
         </div>
         <div class="container">
             <h2>Special Thanks</h2>
-            <p>아래는 악질 이름 생성기를 제작하는데 도움을 받았던 사이트입니다.</p>
             <ul>
                 <li><a href="https://www.youtube.com/watch?v=fBkEVlV5LF8" target="_blank">JTBC 엄준식 화이팅!</a>의 댓글들</li>
                 <li><a href="https://www.youtube.com/watch?v=9BQ4Xc2tx1o" target="_blank">엄준식 추모 영상</a>의 댓글들</li>
                 <li><a href="https://talk.op.gg/s/lol/free/2096057/%EC%95%85%EC%A7%88-%EC%97%84%EC%A4%80%EC%8B%9D-%EB%8B%89%EB%84%A4%EC%9E%84-%EB%AA%A8%EC%9D%8C" target="_blank">악질 엄준식 닉네임 모음 - OP.GG Talk</a></li>
             </ul>
+            <p>...and 전국 각지에 계신 엄준식씨</p>
+            <div class="youtube-profile-wrapper">
+                <div class="youtube-profile-img" id="youtube-profile-img"></div><div class="youtube-profile-name" id="youtube-profile-name">동탄사우나수건도둑엄준식</div>
+            </div>
+            <div style="display: none;"><span id="example-location"></span><span id="example-name"></span></div>
         </div>
     </div>
     <script src="./assets/common.js"></script>
+    <script src="./assets/contents.js"></script>
+    <script src="./assets/generate.js"></script>
+    <script>
+        setInterval(function () {
+          var exampleLocation = exampleLocations[Math.floor(Math.random() * exampleLocations.length)]
+          generate('엄준식', exampleLocation, 'youtube-profile-name')
+          document.getElementById('youtube-profile-img').style.backgroundColor = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6)
+        }, 5000)
+    </script>
 </body>
 </html>

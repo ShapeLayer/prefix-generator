@@ -157,3 +157,26 @@ hr {
     height: 100%;
     vertical-align: middle;
 }
+.youtube-profile-wrapper {
+    display: inline-block;
+    padding: 10px;
+    background-color: #6a6a6a;
+    border: 0;
+    border-radius: 100px;
+    transition: .5s ease-in-out;
+}
+.youtube-profile-img {
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 7.5px;
+    background-color: #aaa;
+    border-radius: 100px;
+    transition: .5s ease-in-out;
+}
+.youtube-profile-name {
+    display: inline-block;
+    vertical-align: middle;
+    transition: .5s ease-in-out;
+}

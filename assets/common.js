@@ -1,3 +1,5 @@
+window.onload = function () {document.getElementsByTagName('body')[0].classList.remove('preload')}
+
 function umfinder (value) {
   if (value === '엄') {document.getElementById('supersecret-document').style.display = 'block'}
 }
