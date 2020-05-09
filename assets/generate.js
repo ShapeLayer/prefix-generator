@@ -5,23 +5,25 @@ for (i=0; i<jobs.length; i++) {
 }
 
 function generate (varName, varLocation, targetID) {
-  var randomDetailLocation = locations[Math.floor(Math.random() * locations.length)]
-  var randomDetailJob = totalJob[Math.floor(Math.random() * totalJob.length)]
   var result = ''
 
-  if (specificLocations[randomDetailLocation] !== undefined) {
-    if (specificLocations[randomDetailLocation][1]) {
-      result = generateSpecificCase(2, [varLocation, randomDetailLocation, specificLocations[randomDetailLocation][0], varName])
-    } else {
-      result = generateSpecificCase(3, [varLocation, randomDetailLocation, specificLocations[randomDetailLocation][0], varName])
-    }
-  } else {
+  if (Math.random() < 0.75) { /* 일반 장소 처리 */
+    var randomDetailLocation = locations[0][Math.floor(Math.random() * locations[0].length)]
+    var randomDetailJob = totalJob[Math.floor(Math.random() * totalJob.length)]
     if (jobs[0].indexOf(randomDetailJob) >= 0) {
       result = generateSpecificCase(1, [varLocation, randomDetailLocation, randomDetailJob, varName])
     } else if (jobs[1].indexOf(randomDetailJob) >= 0) {
       result = generateSpecificCase(2, [varLocation, randomDetailLocation, randomDetailJob, varName])
     }
+  } else { /* 특별한 위치 변수 정의 */
+    var randomDetailLocation = locations[1][Math.floor(Math.random() * locations[1].length)]
+    if (specificLocations[randomDetailLocation][1]) {
+      result = generateSpecificCase(2, [varLocation, randomDetailLocation, specificLocations[randomDetailLocation][0], varName])
+    } else {
+      result = generateSpecificCase(3, [varLocation, randomDetailLocation, specificLocations[randomDetailLocation][0], varName])
+    }
   }
+
   document.getElementById(targetID).innerHTML = result
   // debug: console.log(randomDetailLocation, randomDetailJob, result)
 }

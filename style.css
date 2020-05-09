@@ -12,8 +12,16 @@ body {
 body.detail {
     margin-top: 60px;
 }
+body.joonsik {
+    background: url(./assets/umbg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 a {
     color: #fff;
+}
+.github a {
+    text-decoration: none;
 }
 img {
     width: 100%;
