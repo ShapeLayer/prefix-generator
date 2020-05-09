@@ -13,9 +13,10 @@ body.detail {
     margin-top: 60px;
 }
 body.joonsik {
-    background: url(./assets/umbg.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
+    background: url(./assets/bg/umbg.jpg) center/cover no-repeat fixed;
+}
+body.sibal {
+    background: url(./assets/bg/sibalbg.jpg) center/cover no-repeat fixed;
 }
 a {
     color: #fff;

@@ -3,17 +3,21 @@ function umfinder (value) {
 }
 
 function joonsikfinder (value) {
-  var bodyClassList = document.getElementsByTagName('body')[0].classList
+  var bodyEle = document.getElementsByTagName('body')[0]
   var titleIdentifiers = document.getElementsByClassName('title-identifier')
   if (value === '엄준식') {
-    bodyClassList.add('joonsik')
-    for (i=0; i < titleIdentifiers.length; i++) {
-      titleIdentifiers[i].innerHTML = '엄준식'
-    }
+    bodyEle.className = ''
+    bodyEle.classList.add('joonsik')
+    titleIdentifiers[0].innerHTML = '엄준식'
+    titleIdentifiers[1].innerHTML = '엄준식을'
+  } else if (value === '박원순') {
+    bodyEle.className = ''
+    bodyEle.classList.add('sibal')
+    titleIdentifiers[0].innerHTML = '씨발아저씨'
+    titleIdentifiers[1].innerHTML = '씨발아저씨를'
   } else {
-    bodyClassList.remove('joonsik')
-    for (i=0; i < titleIdentifiers.length; i++) {
-      titleIdentifiers[i].innerHTML = '악질 이름'
-    }
+    bodyEle.className = ''
+    titleIdentifiers[0].innerHTML = '악질 이름'
+    titleIdentifiers[1].innerHTML = '악질 이름을'
   }
 }
