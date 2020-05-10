@@ -36,8 +36,7 @@ function generate (varName, varLocation, targetID) {
   }
 
   document.getElementById(targetID).innerHTML = result
-  //debug: 
-  console.log(randomDetailLocation, randomDetailJob, result)
+  //debug: console.log(randomDetailLocation, randomDetailJob, result)
 }
 
 /* params = [varLocation, randomDetailLocation, randomDetailJob, varName] */
