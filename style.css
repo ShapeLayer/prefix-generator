@@ -18,6 +18,9 @@ body.joonsik {
 body.sibal {
     background: url(./assets/bg/sibalbg.jpg) center/cover no-repeat fixed;
 }
+body.trump {
+    background: url(./assets/bg/trumpbg.jpg) center/cover no-repeat fixed;
+}
 a {
     color: #fff;
 }
