@@ -47,6 +47,9 @@ function generateSpecificCase (caseCode, params) {
     if (params[1] === '산채비빔밥먹는스님앞에서') {
       return params[1] + randomObject + '먹는' + params[3]
     }
+    if (params[2] === '교제사실을들킨'){
+      return params[0] + params[1] + josa.r(randomObject,'와/과')+params[2] + params[3]
+    }
     //
     return params[0] + params[1] + randomObject + params[2] + params[3]
   } else if (caseCode === 2) {
