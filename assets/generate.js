@@ -21,13 +21,21 @@ function generate (varName, varLocation, targetID) {
         randomDetailLocation = randomDetailLocation + (Math.floor(Math.random() * 2)+1) + '학년' + (Math.floor(Math.random() * 9)+1) + '반'
       }
     }
-    //
+    if ((randomDetailLocation === '지하철' || randomDetailLocation === '지하철역') && randomDetailJob === '앞에서절두번하는' ) {
+      // debug: console.log('지하철', '절두번하는')
+      while (randomDetailJob === '앞에서절두번하는') {
+        // debug: console.log('지하철', '절두번하는', '루프')
+        randomDetailJob = totalJob[Math.floor(Math.random() * totalJob.length)]
+      }
+      // debug: console.log('지하철', '절두번하는', randomDetailJob)
+    }
+    // 특별한 문장 정의 완료
     if (jobs[0].indexOf(randomDetailJob) >= 0) {
       result = generateSpecificCase(1, [varLocation, randomDetailLocation, randomDetailJob, varName])
     } else if (jobs[1].indexOf(randomDetailJob) >= 0) {
       result = generateSpecificCase(2, [varLocation, randomDetailLocation, randomDetailJob, varName])
     }
-  } else { /* 특별한 위치 변수 정의 */
+  } else { /* 특별한 위치 변수 정의 처리 */
     var randomDetailLocation = locations[1][Math.floor(Math.random() * locations[1].length)]
     // 여기서 문제가 발생한다면 특별한 위치 변수를 제대로 정의하지 않은것.
     // debug: console.log('specificLocations', specificLocations[randomDetailLocation], randomDetailLocation)
@@ -53,7 +61,7 @@ function generateSpecificCase (caseCode, params) {
     if (params[2] === '교제사실을들킨'){
       return params[0] + params[1] + josa.r(randomObject, '와/과') + params[2] + params[3]
     }
-    //
+    // 특별한 문장 정의 완료
     return params[0] + params[1] + randomObject + params[2] + params[3]
   } else if (caseCode === 2) {
     return params[0] + params[1] + params[2] + params[3]
