@@ -31,8 +31,16 @@ img {
     width: 100%;
     max-width: 400px;
 }
-input[type=text], input[type=text]::placeholder {
+input[type=text], input[type=text]::placeholder, input[type=number], input[type=number]::placeholder {
     font-family: 'NeoDunggeunmo', sans-serif;
+}
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number] {
+    -moz-appearance: textfield;
 }
 
 .container {
@@ -77,6 +85,7 @@ form .wrapper {
 .form-8bit {
     position: relative;
     display: inline-block;
+    transition: .5s ease-in-out;
 }
 .form-8bit:before, 
 .form-8bit:after, 
@@ -182,4 +191,27 @@ hr {
     display: inline-block;
     vertical-align: middle;
     transition: .5s ease-in-out;
+}
+#is-limited-label {
+    width: 50px;
+    height: 50px;
+}
+.checkboxlabeler {
+    display: inline-block;
+}
+.checkboxlabeler input[type=checkbox] {
+    opacity: 0;
+}
+p.checkboxlabeler {
+    margin-left: 15px;
+}
+#is-limited-num {
+    display: inline-block;
+}
+div#is-limited-num {
+    margin-left: 10px;
+}
+#is-limited-num input[type=number] {
+    height: 10px;
+    width: 50px;
 }

@@ -38,6 +38,10 @@
             <form action="" autocomplete="off">
                 <div class="wrapper"><div class="form-8bit"><div class="form-8bit-wrapper"><input class="form-component input light-dark" type="text" name="location" id="location" placeholder="거주지(선택)"></div></div></div>
                 <div class="wrapper"><div class="form-8bit"><div class="form-8bit-wrapper"><input class="form-component input light-dark" type="text" name="name" id="name" placeholder="이름" onchange="joonsikfinder(this.value)"></div></div></div>
+                <div style="display: inline-block;">
+                    <label for="is-limited"><div class="wrapper checkboxlabeler"><div id="is-limited-wrapper" class="form-8bit"><div class="form-8bit-wrapper"><input id="is-limited" class="checkboxlabeler-input" type="checkbox"></div></div></div><p class="checkboxlabeler" id="is-limited-alerter">글자수 제한</p></label>
+                    <div class="wrapper" id="is-limited-num"><div class="form-8bit"><div class="form-8bit-wrapper"><input class="form-component input light-dark" type="number" name="is-limited-num" id="is-limited-num-input" placeholder="N자리" onchange=""></div></div></div>
+                </div>
                 <div class="wrapper"><div class="form-8bit"><div class="form-8bit-wrapper"><div class="form-component button" onclick="generate(document.getElementById('name').value, document.getElementById('location').value, 'result')">생성!</div></div></div></div>
             </form>
         </div>

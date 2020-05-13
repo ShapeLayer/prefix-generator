@@ -5,12 +5,26 @@ for (i=0; i<jobs.length; i++) {
 }
 
 function generate (varName, varLocation, targetID) {
+  if (isLimitedCheckbox.checked && isLimitedNumInput.value >= 12) {
+    result = 'N'.repeat(isLimitedNumInput.value + 2)
+    while (result.length > isLimitedNumInput.value) {
+      result = generateIndexer(varName, varLocation)
+    }
+  } else {
+    result = generateIndexer(varName, varLocation)
+  }
+  
+  document.getElementById(targetID).innerHTML = result
+}
+
+function generateIndexer (varName, varLocation) {
   var result = ''
 
   if (Math.random() < 0.8) { /* 일반 장소 처리 */
     var randomDetailLocation = locations[0][Math.floor(Math.random() * locations[0].length)]
     var randomDetailJob = totalJob[Math.floor(Math.random() * totalJob.length)]
     // debug: console.log(randomDetailLocation, randomDetailJob)
+
     // 특별한 문장 정의
     if (randomDetailLocation === '시내버스') {
       if (Math.random() > 0.3) {
@@ -30,6 +44,7 @@ function generate (varName, varLocation, targetID) {
       // debug: console.log('지하철', '절두번하는', randomDetailJob)
     }
     // 특별한 문장 정의 완료
+
     if (jobs[0].indexOf(randomDetailJob) >= 0) {
       result = generateSpecificCase(1, [varLocation, randomDetailLocation, randomDetailJob, varName])
     } else if (jobs[1].indexOf(randomDetailJob) >= 0) {
@@ -45,15 +60,16 @@ function generate (varName, varLocation, targetID) {
       result = generateSpecificCase(3, [varLocation, randomDetailLocation, specificLocations[randomDetailLocation][0], varName])
     }
   }
-
-  document.getElementById(targetID).innerHTML = result
   //debug: console.log(randomDetailLocation, randomDetailJob, result)
+
+  return result
 }
 
 /* params = [varLocation, randomDetailLocation, randomDetailJob, varName] */
 function generateSpecificCase (caseCode, params) {
   if (caseCode === 1) {
     var randomObject = objects[Math.floor(Math.random() * objects.length)]
+
     // 특별한 문장 정의
     if (params[1] === '산채비빔밥먹는스님앞에서') {
       return params[1] + randomObject + '먹는' + params[3]
@@ -62,10 +78,25 @@ function generateSpecificCase (caseCode, params) {
       return params[0] + params[1] + josa.r(randomObject, '와/과') + params[2] + params[3]
     }
     // 특별한 문장 정의 완료
+
     return params[0] + params[1] + randomObject + params[2] + params[3]
   } else if (caseCode === 2) {
+
+    // 특별한 문장 정의
+    if (params[1] === '납골당') {
+      params[2] = ['유골항아리도둑', '유골항아리파괴자'][Math.floor(Math.random() * 2)]
+    }
+    // 특별한 문장 정의 완료
+
     return params[0] + params[1] + params[2] + params[3]
   } else if (caseCode === 3) {
+
+    // 특별한 문장 정의
+    if (params[1] === '틀니') {
+      params[1] = (Math.floor(Math.random() * 11)+1) + '주' + params[1]
+    }
+    // 특별한 문장 정의 완료
+
     if (params[0] === '' || Math.floor(Math.random() * 2) === 0) {
       return params[1] + params[2] + params[3]
     } else {
