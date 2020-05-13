@@ -8,16 +8,16 @@ function generate (varName, varLocation, targetID) {
   if (isLimitedCheckbox.checked && isLimitedNumInput.value >= 12) {
     result = 'N'.repeat(isLimitedNumInput.value + 2)
     while (result.length > isLimitedNumInput.value) {
-      result = generateIndexer(varName, varLocation)
+      result = generateResult(varName, varLocation)
     }
   } else {
-    result = generateIndexer(varName, varLocation)
+    result = generateResult(varName, varLocation)
   }
   
   document.getElementById(targetID).innerHTML = result
 }
 
-function generateIndexer (varName, varLocation) {
+function generateResult (varName, varLocation) {
   var result = ''
 
   if (Math.random() < 0.8) { /* 일반 장소 처리 */
