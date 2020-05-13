@@ -9,6 +9,10 @@ function joonsikfinder (value) {
   var bodyEle = document.getElementsByTagName('body')[0]
   var titleIdentifiers = document.getElementsByClassName('title-identifier')
   if (value === '엄준식') {
+    bodyEle.className = ''	
+    //bodyEle.classList.add('joonsik')	
+    titleIdentifiers[0].innerHTML = '엄준식'	
+    titleIdentifiers[1].innerHTML = '엄준식을'
   } else if (value === '박원순') {
   } else if (value === '트럼프') {
   } else {
