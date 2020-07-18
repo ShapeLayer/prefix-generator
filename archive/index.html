@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134051594-4"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-134051594-4');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="application-name" content="악질 이름 생성기 - 이전 버전">
+    <meta name="theme-color" content="#000">
+    <meta name="description" content="당신만의 악질 이름을 생성하세요.">
+    <title>악질 이름 생성기 - 이전 버전</title>
+    <link rel="stylesheet" href="./assets/style.css">
+    <meta property="og:url" content="https://name.ho9.me">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="악질 이름 생성기 - 이전 버전">
+    <meta property="og:description" content="당신만의 악질 이름을 생성하세요.">
+    <meta property="og:site_name" content="악질 이름 생성기 - 이전 버전">
+    <meta property="og:locale" content="ko_KR">
+    <meta name="twitter:url" content="https://name.ho9.me">
+    <meta name="twitter:title" content="악질 이름 생성기 - 이전 버전">
+    <meta name="twitter:description" content="당신만의 악질 이름을 생성하세요.">
+</head>
+<body class="preload">
+    <div class="container">
+        <div class="hero">
+            <h1><span class="title-identifier">악질 이름</span> 생성기 - 이전 버전</h1>
+            <p>랜덤으로 <span class="title-identifier">악질 이름을</span> 생성합니다.</p>
+            <p>7월 18일 어휘 순화 업데이트 이전 버전</p>
+        </div>
+        <div class="form">
+            <form action="" autocomplete="off">
+                <div class="wrapper"><div class="form-8bit"><div class="form-8bit-wrapper"><input class="form-component input light-dark" type="text" name="location" id="location" placeholder="거주지(선택)"></div></div></div>
+                <div class="wrapper"><div class="form-8bit"><div class="form-8bit-wrapper"><input class="form-component input light-dark" type="text" name="name" id="name" placeholder="이름" onchange="joonsikfinder(this.value)"></div></div></div>
+                <div style="display: inline-block;">
+                    <label for="is-limited"><div class="wrapper checkboxlabeler"><div id="is-limited-wrapper" class="form-8bit"><div class="form-8bit-wrapper"><input id="is-limited" class="checkboxlabeler-input" type="checkbox"></div></div></div><p class="checkboxlabeler" id="is-limited-alerter">글자수 제한</p></label>
+                    <div class="wrapper" id="is-limited-num"><div class="form-8bit"><div class="form-8bit-wrapper"><input class="form-component input light-dark" type="number" name="is-limited-num" id="is-limited-num-input" placeholder="N자리" onchange=""></div></div></div>
+                </div>
+                <div class="wrapper"><div class="form-8bit"><div class="form-8bit-wrapper"><div class="form-component button" onclick="generate(document.getElementById('name').value, document.getElementById('location').value, 'result')">생성!</div></div></div></div>
+            </form>
+        </div>
+    </div>
+    <div class="container">
+        <div class="wrapper">
+            <p class="result" id="result">생성 버튼을 누르면 여기에 결과가 표시됩니다.</p>
+        </div>
+        <hr>
+        <div class="example">
+            <p>어떤 이름이 나올까?</p>
+            <div class="input-example light-dark" id="example-location">동탄</div>
+            <div class="input-example light-dark" id="example-name">엄준식</div>
+             → 
+            <div class="input-example light-dark" id="example-result">동탄사우나수건도둑엄준식</div>
+        </div>
+    </div>
+    <div class="github-wrapper"><div class="form-8bit"><div class="form-8bit-wrapper"><div class="github"><a href="../detail.html" target="_blank">대체 여긴 뭐하는 사이트인가요?</a></div></div></div></div>
+    <script src="./assets/js/josa.js"></script>
+    <script src="./assets/js/common.js"></script>
+    <script src="./assets/js/contents.js"></script>
+    <script src="./assets/js/generate.js"></script>
+    <script>
+        setInterval(function () {
+          var exampleName = exampleNames[Math.floor(Math.random() * exampleNames.length)]
+          var exampleLocation = exampleLocations[Math.floor(Math.random() * exampleLocations.length)]
+          generate(exampleName, exampleLocation, 'example-result')
+          document.getElementById('example-location').innerHTML = exampleLocation
+          document.getElementById('example-name').innerHTML = exampleName
+        }, 5000)
+    </script>
+</body>
+</html>
