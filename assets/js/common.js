@@ -13,8 +13,8 @@ isLimitedCheckbox.onchange = function () {
   }
 }
 isLimitedNumInput.onchange = function () {
-  if (isLimitedNumInput.value < 12) {
-    isLimitedAlerter.innerHTML = '12자리 이상!'
+  if (isLimitedNumInput.value < 10) {
+    isLimitedAlerter.innerHTML = '10자리 이상!'
   } else {
     isLimitedAlerter.innerHTML = '글자수 제한'
   }

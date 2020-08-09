@@ -5,7 +5,7 @@ for (i=0; i<jobs.length; i++) {
 }
 
 function generate (varName, varLocation, targetID) {
-  if (isLimitedCheckbox.checked && isLimitedNumInput.value >= 12) {
+  if (isLimitedCheckbox.checked && isLimitedNumInput.value >= 10) {
     result = 'N'.repeat(isLimitedNumInput.value + 2)
     while (result.length > isLimitedNumInput.value) {
       result = generateResult(varName, varLocation)
