@@ -15,8 +15,8 @@
 7월 18일, 악질 이름 생성기에 추가된 어휘를 조정하기 위해 읽기 전용 상태를 해제했습니다.  
 
 ### LICENSE
-#### [악질 이름 생성기](https://github.com/kpjhg0124/prefix-generator)
-[MIT LICENSE](https://github.com/kpjhg0124/prefix-generator/blob/master/LICENSE)
+#### [악질 이름 생성기](https://github.com/ShapeLayer/prefix-generator)
+[MIT LICENSE](https://github.com/ShapeLayer/prefix-generator/blob/master/LICENSE)
 #### [Josa.js](https://github.com/e-/Josa.js/)
 [MIT LICENSE](https://github.com/e-/Josa.js/blob/master/LICENSE)
 #### [Neo둥근모](https://github.com/Dalgona/neodgm)
