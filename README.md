@@ -7,6 +7,7 @@
 > 당신만의 악질 이름을 생성하세요.  
 
  * [사이트 이동](https://name.ho9.me)  
+ * [자주 묻는 질문](https://github.com/ShapeLayer/prefix-generator/issues/16)  
  * [악질 이름 생성기를 되돌아보며](https://medium.com/@kpjhg0124/%EC%95%85%EC%A7%88-%EC%9D%B4%EB%A6%84-%EC%83%9D%EC%84%B1%EA%B8%B0%EB%A5%BC-%EB%90%98%EB%8F%8C%EC%95%84%EB%B3%B4%EB%A9%B0-c767523b5d06)
 
 ### LICENSE
